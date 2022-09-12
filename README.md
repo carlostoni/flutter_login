@@ -1,4 +1,4 @@
-# ui_example
+# UI_example
 
 A new Flutter project.
 

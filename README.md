@@ -1,4 +1,4 @@
-# UI_Example_Flutter
+# Flutter_login
 
 ### Example of Sign in and Sign up in flutter
 
@@ -13,7 +13,9 @@
 
 ## Software operation
 
-![1](https://user-images.githubusercontent.com/80012970/189566125-00ca28db-1ee4-41c9-bb28-ff734b7dccac.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/80012970/196333750-a643ad89-d087-4f8a-a921-9a9f9479c421.gif)
+
+
 
 
 

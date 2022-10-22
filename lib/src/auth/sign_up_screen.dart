@@ -5,8 +5,8 @@ import 'package:ui_example/src/auth/components/custom_text_field.dart';
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({Key? key}) : super(key: key);
 
-  final cpfFormatter = MaskTextInputFormatter(
-    mask: '###.###.###-##',
+  final snFormatter = MaskTextInputFormatter(
+    mask: '###-##-####',
     filter: {'#': RegExp(r'[0-9]')},
   );
 
@@ -70,44 +70,64 @@ class SignUpScreen extends StatelessWidget {
                         children: [
                           const CustomTextField(
                             icon: Icons.email,
-                            label: 'Email',
+                            label: 'E-mail',
                           ),
                           const CustomTextField(
                             icon: Icons.lock,
-                            label: 'Senha',
+                            label: 'Password',
                             isSecret: true,
                           ),
                           const CustomTextField(
                             icon: Icons.person,
-                            label: 'Nome',
+                            label: 'Name',
                           ),
                           CustomTextField(
                             icon: Icons.phone,
-                            label: 'Telefone',
+                            label: 'Telephone',
                             inputFormatters: [phoneFormatter],
                           ),
                           CustomTextField(
                             icon: Icons.content_copy,
-                            label: 'CPF',
-                            inputFormatters: [cpfFormatter],
+                            label: 'Social Number',
+                            inputFormatters: [snFormatter],
                           ),
-                          SizedBox(
-                            height: 40,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.white30,
-                                shadowColor: Colors.black,
-                                side: BorderSide(
-                                    width: 3, color: Colors.blueGrey),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40),
+                          Container(
+                          width: double.infinity,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              stops: [0.0, 0.5, 1.0],
+                              colors: [
+                                Color.fromARGB(255, 157, 219, 115),
+                                Color.fromARGB(255, 134, 190, 136),
+                                Color.fromARGB(255, 109, 248, 197),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  side: BorderSide(
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
+                              minimumSize:
+                                  MaterialStateProperty.all(Size(40, 40)),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.transparent),
+                            ),
                               onPressed: () {},
                               child: const Text(
                                 'Register User',
                                 style: TextStyle(
-                                  color: Colors.black87,
+                                  color: Colors.white,
                                   fontSize: 20,
                                 ),
                               ),

@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_example/src/auth/sign_up_screen.dart';
-
+import 'package:auth_buttons/auth_buttons.dart';
 import 'components/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -124,22 +124,43 @@ class SignInScreen extends StatelessWidget {
                           isSecret: true,
                         ),
                         //Entrar
-                        SizedBox(
+                        Container(
+                          width: double.infinity,
                           height: 40,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              stops: [0.0, 0.5, 1.0],
+                              colors: [
+                                Color.fromARGB(255, 157, 219, 115),
+                                Color.fromARGB(255, 134, 190, 136),
+                                Color.fromARGB(255, 109, 248, 197),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.white30,
-                              shadowColor: Colors.black,
-                              side: BorderSide(width: 3, color: Colors.blueGrey),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40),
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  side: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
                               ),
+                              minimumSize:
+                                  MaterialStateProperty.all(Size(40, 40)),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.transparent),
                             ),
                             onPressed: () {},
                             child: const Text(
                               'Sign in',
                               style: TextStyle(
-                                color: Colors.black87,
+                                color: Colors.white,
                                 fontSize: 20,
                               ),
                             ),
@@ -160,7 +181,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                         //Dividir a tela
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 5),
+                          padding: const EdgeInsets.only(bottom: 3),
                           child: Row(
                             children: [
                               Expanded(
@@ -183,18 +204,72 @@ class SignInScreen extends StatelessWidget {
                           ),
                         ),
 
+                        Center(
+                          child: AuthButtonGroup(
+                            style: const AuthButtonStyle(
+                              width: 50,
+                              height: 50,
+                              margin: EdgeInsets.only(bottom: 4.0),
+                              elevation: 5.0,
+                              splashColor: Colors.grey,
+                            ),
+                            buttons: [
+                              GoogleAuthButton(
+                                onPressed: () {},
+                                style: AuthButtonStyle(
+                                  buttonType: AuthButtonType.icon,
+                                  borderRadius: 30,
+                                ),
+                              ),
+                              FacebookAuthButton(
+                                onPressed: () {},
+                                style: AuthButtonStyle(
+                                  buttonType: AuthButtonType.icon,
+                                  borderRadius: 30,
+                                ),
+                              ),
+                              MicrosoftAuthButton(
+                                onPressed: () {},
+                                style: AuthButtonStyle(
+                                  buttonType: AuthButtonType.icon,
+                                  borderRadius: 30,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         //Botao para novo usuario
-                        SizedBox(
+                        Container(
+                          width: double.infinity,
                           height: 40,
-                          child: OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              stops: [0.0, 0.5, 1.0],
+                              colors: [
+                                Color.fromARGB(255, 157, 219, 115),
+                                Color.fromARGB(255, 134, 190, 136),
+                                Color.fromARGB(255, 109, 248, 197),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  side: BorderSide(
+                                    color: Colors.black,
+                                  ),
+                                ),
                               ),
-                              side: const BorderSide(
-                                width: 1,
-                                color: Colors.blueGrey,
-                              ),
+                              minimumSize:
+                                  MaterialStateProperty.all(Size(40, 40)),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.transparent),
                             ),
                             onPressed: () {
                               Navigator.of(context).push(
@@ -206,6 +281,7 @@ class SignInScreen extends StatelessWidget {
                             child: Text(
                               'Sign up',
                               style: TextStyle(
+                                color: Colors.white,
                                 fontSize: 20,
                               ),
                             ),

@@ -191,7 +191,7 @@ class SignInScreen extends StatelessWidget {
                                 ),
                               ),
                               const Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                padding: EdgeInsets.symmetric(horizontal: 12),
                                 child: Text('Or'),
                               ),
                               Expanded(

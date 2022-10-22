@@ -3,8 +3,9 @@
 ### Example of Sign in and Sign up in flutter
 
 ### :iphone: Dependencies:
- - animated_text_kit: any
+ - animated_text_kit: ^4.2.2
  - mask_text_input_formatter: ^2.4.0
+ - auth_buttons: ^3.0.0
  
  <p>
  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" />
@@ -13,12 +14,7 @@
 
 ## Software operation
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/80012970/196333750-a643ad89-d087-4f8a-a921-9a9f9479c421.gif)
-
-
-
-
-
+![ezgif com-gif-maker (5) (1)](https://user-images.githubusercontent.com/80012970/197309889-e6552d49-e543-497f-8132-75f3903f04f2.gif)
 
 
 ## Getting Started
